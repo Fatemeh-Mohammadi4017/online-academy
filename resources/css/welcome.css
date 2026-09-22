@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+}
+
+.welcome-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.welcome-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.welcome-header nav {
+    display: flex;
+    gap: 20px;
+}
+
+.welcome-header a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.welcome-header a:hover {
+    color: #3498db;
+}
+
+.hero {
+    text-align: center;
+    padding: 90px 20px;
+    background: #3498db;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: white;
+    color: #3498db;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 60px 8%;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    width: 280px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+}
