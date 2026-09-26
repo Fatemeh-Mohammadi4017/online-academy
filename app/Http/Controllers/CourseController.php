@@ -33,8 +33,9 @@ class CourseController extends Controller
      */
     public function create()
     {
-       $users= User::where('role','teacher')->get();
-       return view('courses.create',compact('users'));
+    //    $users= User::where('role','teacher')->get();
+        $user=auth()->user();
+       return view('courses.create',compact('user'));
     }
 
     /**
@@ -42,6 +43,7 @@ class CourseController extends Controller
      */
     public function store(StoreCourseRequest $request)
     {
+
         Course::create([
             'name'=>$request->name,
             'price'=>$request->price,
@@ -82,7 +84,6 @@ class CourseController extends Controller
         $course->update([
             'name'=>$request->name,
             'price'=>$request->price,
-            'teacher_id'=>$request->teacher_id,
             'duration'=>$request->duration,
             'is_published'=>$request->is_published,
             'description'=>$request->description,

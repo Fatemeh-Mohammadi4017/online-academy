@@ -35,7 +35,7 @@ class UserController extends Controller
              'password'=>$request->password,
              'role'=>$request->role
         ]);
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success','کاربر با موفقیت ایجاد شد');
     }
 
     /**
@@ -70,7 +70,7 @@ class UserController extends Controller
             'password' => $request->password
         ]);
     }
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success','کاربر با موفقیت تغییر یافت');
     }
 
     /**
@@ -79,6 +79,6 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success','کاربر با موفقیت حذف شد');
     }
 }

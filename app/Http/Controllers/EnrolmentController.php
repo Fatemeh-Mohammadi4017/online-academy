@@ -23,7 +23,7 @@ class EnrolmentController extends Controller
          $course=Course::findOrFail($request->course_id);
          $student=$request->user();
          $course->students()->attach($student->id);
-         return redirect()->route('enrolments.create');
+         return redirect()->route('enrolments.index');
     }
     public function destroy(Course $course,User $student){
         Gate::authorize('unenroll',[$course,$student]);

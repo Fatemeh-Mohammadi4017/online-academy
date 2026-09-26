@@ -15,14 +15,23 @@
     <div class="form-row">
     <label for="l2">موضوع:</label>
     <input type="text" id="l2" name="topic">
+    @error('topic')
+    <span>{{$message}}</span>
+    @enderror
     </div>
     <div class="form-row">
     <label for="l3">توضیحات:</label>
     <input type="text" id="l3" name="description">
+    @error('description')
+    <span>{{$message}}</span>
+    @enderror
     </div>
     <div class="form-row">
     <label for="l4">مدت زمان:</label>
-    <input type="number" id="l4" name="duration">
+    <input type="text" id="l4" name="duration">
+    @error('duration')
+    <span>{{$message}}</span>
+    @enderror
     </div>
     <div class="submit-row">
     <button type="submit" class="submit-btn">ایجاد درس</button>

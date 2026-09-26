@@ -8,6 +8,11 @@
 </head>
 <body>
     <h1 class="form-title">لیست درس ها</h1>
+    @if(session('success'))
+    <div class="success-message">
+    {{session('success') }}
+    </div>
+    @endif
     <table>
         <tr>
             <th>دوره</td>

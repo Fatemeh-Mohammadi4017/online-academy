@@ -7,6 +7,7 @@
     @vite('resources/css/app.css')
 </head>
 <body>
+   <p> <a href=" {{route('enrolments.create')}}" class="create-btn">ثبت نام</a></p>
     <h1 class="form-title">دوره های : {{$student->name}}</h1>
     <table class="enrolment-table">
         <tr>

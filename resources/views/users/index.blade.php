@@ -7,6 +7,11 @@
    @vite(['resources/css/app.css', 'resources/css/users.css'])
 </head>
 <body>
+     @if(session('success'))
+     <div class="success-message">
+        {{session('success')  }}
+     </div>
+    @endif
     <div class="users-container">
     <h1 >مدیریت کاربران</h1>
     <form action="{{route('users.store')}}" method="POST" class="create-user-form">

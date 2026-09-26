@@ -311,5 +311,15 @@ input,textarea {
 .dashboard-course-link:hover {
     text-decoration: underline;
 }
+.success-message {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 15px;
+}
 
      

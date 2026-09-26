@@ -9,10 +9,12 @@
 <body>
     <h1>دوره های اموزشی اکادمی</h1>
     @if(session('success'))
+    <div class="success-message">
     {{session('success') }}
+    </div>
     @endif
     <div class="course-tools">
-    <p>ایجاد دوره:<a href="{{route('courses.create')}}" class="create-btn">Create</a></p>
+    <p>ایجاد دوره:<a href="{{route('courses.create')}}" class="create-btn">ایجاد</a></p>
 
     <form action="{{route('courses.index')}}" method="GET" class="search-form">
     <label for="s1"> جستجوی دوره:</label>

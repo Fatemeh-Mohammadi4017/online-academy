@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreLessonRequest;
+use App\Http\Requests\UpdateLessonRequest;
 use App\Models\Lesson;
 use App\Models\Course;
 use Illuminate\Support\Facades\Gate;
@@ -30,7 +32,7 @@ class LessonController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreLessonRequest $request)
     {
         Gate::authorize('create',Lesson::class);
         Lesson::create([
@@ -39,7 +41,7 @@ class LessonController extends Controller
             'description'=>$request->description,
             'duration'=>$request->duration
         ]);
-        return Redirect()->route('lessons.index');
+        return Redirect()->route('lessons.index')->with('success','درس با موفقیت ایجاد شد');
     }
 
     /**
@@ -62,17 +64,16 @@ class LessonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateLessonRequest $request, string $id)
     {
         $lesson=Lesson::findOrFail($id);
         Gate::authorize('update', $lesson);
         $lesson->update([
-            'course_id'=>$request->course_id,
             'topic'=>$request->topic,
             'description'=>$request->description,
             'duration'=>$request->duration
         ]);
-        return Redirect()->route('lessons.index');
+        return Redirect()->route('lessons.index')->with('success',' درس با موفقیت تغییر کرد');
     }
 
     /**
@@ -82,6 +83,6 @@ class LessonController extends Controller
     {
         Gate::authorize('delete',$lesson);
         $lesson->delete();
-    return redirect()->route('lessons.index');
+    return redirect()->route('lessons.index')->with('success','درس با موفقیت حذف شد');
     }
 }
